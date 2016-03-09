@@ -17,11 +17,14 @@
 <body ng-controller='ghUsersCtrl'>
   <main >
     <section id='user-list'>
-      <ul id='list' ng-repeat='i in data.data'>
-        <li>
-          Username: {{i.login}}
-        </li>
-      </ul>
+        <h1>Makers Academy Members</h1>
+          <ul id='list' ng-repeat='i in data.data'>
+            <li>
+              
+             <a href={{i.html_url}}> Username: {{i.login}} </a>
+              
+            </li>
+          </ul>
     </section>
     
  </main>
