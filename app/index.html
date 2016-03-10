@@ -18,10 +18,10 @@
   <main >
     <section id='user-list'>
         <h1>Makers Academy Members</h1>
-          <ul id='list' ng-repeat='i in data.data'>
+          <ul id='list' ng-repeat='user in members.data'>
             <li>
               
-             <a href={{i.html_url}}> Username: {{i.login}} </a>
+             <a href={{user.html_url}}> Username: {{user.login}} </a>
               
             </li>
           </ul>
