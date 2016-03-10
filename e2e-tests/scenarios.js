@@ -28,7 +28,8 @@ describe('my app', function() {
     expect(element(by.id('search')).isPresent()).toBe(true);
   });
 
-  it('should return a filtered search', function() {
+  it('should return a filtered search', function($httpBackend) {
+    $httpBackend.whenGET('https://api.github.com/orgs/makersacademy/members').respond('name');
     browser.get('index.html');
     element(by.model('query')).sendKeys('Adrian')
     var list = $('ul#list')
