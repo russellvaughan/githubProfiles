@@ -15,10 +15,14 @@
   
 </head>
 <body ng-controller='ghUsersCtrl'>
-  <main >
+  <main>
+    <section id='search_box'>
+    <input id='search' ng-model='query'>
+    </input>
+    </section>
     <section id='user-list'>
         <h1>Makers Academy Members</h1>
-          <ul id='list' ng-repeat='user in members.data'>
+          <ul id='list' ng-repeat='user in members.data | filter: query' >
             <li>
               
              <a href={{user.html_url}}> Username: {{user.login}} </a>
@@ -40,6 +44,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
  <script src="bower_components/angular/angular.js"></script>
+ <script src="bower_components/angular-mocks/angular-mocks.js"></script>
  <script src="bower_components/angular-route/angular-route.js"></script>
  <script src="app.js"></script>
  <script src="components/version/version.js"></script>
