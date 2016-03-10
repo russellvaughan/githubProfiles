@@ -1,11 +1,12 @@
 
-myApp.controller('ghUsersCtrl', function($scope, $http) {
+myApp.controller('ListController', function($http) {
+  var self = this
   
   $http({
     method: 'GET',
     url: 'https://api.github.com/orgs/makersacademy/members'
   }).then(function successCallback(response) {
-    $scope.members = response
+    self.members = response
     
   }, function errorCallback(response) {
     console.log('Error =' + response )
