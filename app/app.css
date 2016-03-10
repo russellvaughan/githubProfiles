@@ -34,3 +34,7 @@ li {
   width: 350px;
   height: 120px;
 }
+
+li img {
+  height:inherit;
+}

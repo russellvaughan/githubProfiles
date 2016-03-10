@@ -24,9 +24,8 @@
         <h1>Makers Academy Members</h1>
           <ul id='list' ng-repeat='user in members.data | filter: query' >
             <li>
-              
-             <a href={{user.html_url}}> Username: {{user.login}} </a>
-              
+              <img id={{user.id}} src={{user.avatar_url}}>
+              <a href={{user.html_url}}> Username: {{user.login}} </a>
             </li>
           </ul>
     </section>
