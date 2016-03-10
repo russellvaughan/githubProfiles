@@ -19,7 +19,7 @@ describe('my app', function() {
   
   it('should display a list of users', function() {
     browser.get('index.html');
-    var list = $('section#user-list');
+    var list = $('ul#list');
     expect(list.getText()).toMatch(/Username/);
   });
 
@@ -38,14 +38,14 @@ describe('my app', function() {
   it('should return a filtered search', function() {
     browser.get('index.html');
     element(by.model('query')).sendKeys('Adrian')
-    var list = $('section#user-list')
+    var list = $('ul#list')
     expect(list.getText()).not.toMatch(/Bibiana/)
     expect(list.getText()).toMatch(/Adrian/)
   });
   
   it('should display the number of followers the user has', function() {
     browser.get('index.html');
-    var list = $('section#user-list');
+    var list = $('ul#list');
     element(by.model('query')).sendKeys('Adrian')
     expect(list.getText()).toMatch(/Followers: \d+/);
   });

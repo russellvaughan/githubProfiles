@@ -1,6 +1,7 @@
 
 myApp.controller('ListController', function($http) {
   var self = this
+  
   $http({
     method: 'GET',
     url: 'https://api.github.com/orgs/makersacademy/members'
