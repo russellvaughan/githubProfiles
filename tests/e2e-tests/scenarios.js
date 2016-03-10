@@ -11,7 +11,7 @@ describe('my app', function() {
   
   it('should show a list of members on the main page', function() {
     browser.get('index.html');
-    var section = $('#user-list');
+    var section = $('section#user-list');
     expect(section.getText()).toContain('Username');
   });
   
@@ -47,6 +47,14 @@ describe('my app', function() {
     expect(repos.getText()).toContain("Repos:");
     expect(repoNumber.getText()).toBeGreaterThan(-1);
     });  
+  });
+  
+  it('should display the number of followers the user has', function() {
+    browser.get('index.html');
+    var list = $('ul#list');
+    element(by.model('query')).sendKeys('Adrian')
+    expect(list.getText()).toMatch(/Followers: \d+/);
+  });
 });
 
 
