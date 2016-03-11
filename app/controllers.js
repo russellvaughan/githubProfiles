@@ -1,16 +1,9 @@
 
-myApp.controller('ListController', function($http) {
+myApp.controller('ListController', function(UserListFactory) {
   var self = this
   
-  $http({
-    method: 'GET',
-    url: 'https://api.github.com/orgs/makersacademy/members'
-  }).then(function successCallback(response) {
-    self.members = response
-    
-  }, function errorCallback(response) {
-    console.log('Error =' + response )
- });
-
-
+  UserListFactory.getList().then(function(response) {
+    self.userData = response;
+  })    
+ 
 })
