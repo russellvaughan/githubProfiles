@@ -18,19 +18,34 @@
   <main>
     
     <section id='search_box'>
-       <input id='search' ng-model='query'></input>
+      <label> Search : </label>
+      <input id='search' placeholder='search for makers' ng-model='query' autofocus></input>
     </section>
     
+      <label class='formgroup'> Order  - 
+      </label>
+      
+      <label class='formgroup'> Ascending : 
+         <input type='radio' ng-model='direction' name='direction' checked></input>
+      </label>
+      
+      <label class='formgroup'> Descending : 
+         <input type='radio' ng-model='direction' name='direction' value='reverse'></input>
+      </label>
+      
     <section id='user-list'>
         <h1>Makers Academy Members</h1>
           <ul id='list'>
-            <li ng-repeat='user in listC.members.data | filter: query'>
-              <img id={{user.id}} src={{user.avatar_url}}>
-              <a href={{user.html_url}}> Username: {{user.login}} </a>
-              <p class="repo">Repos:<span class="repoNumber">{{user.repos_url.length}}</span></p>
-              <a href={{user.html_url}}> Username:{{user.login}} </a> Followers: {{user.followers_url.length}}
+            <li ng-repeat='user in listC.userData | filter:query '>
+              <ul>
+                <li><a href={{user.html_url}}> Username: {{user.login}} </a></li>
+                <li><img src={{user.avatar_url}}></li>
+                <li>Followers: {{listC.getLink(user.followers_url)}}</li>
+                <li>User repositories: {{user.repos_url.length}}</li>
+            </ul>
             </li>
           </ul> 
+          {{listC.followersData}}
     </section>
     
  </main>
