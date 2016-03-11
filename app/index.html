@@ -38,14 +38,14 @@
           <ul id='list'>
             <li ng-repeat='user in listC.userData | filter:query '>
               <ul>
-                <li><a href={{user.html_url}}> Username: {{user.login}} </a></li>
-                <li><img src={{user.avatar_url}}></li>
-                <li>Followers: {{listC.getLink(user.followers_url)}}</li>
-                <li>User repositories: {{user.repos_url.length}}</li>
-            </ul>
+                <li><a href={{user.data.html_url}}> Username: {{user.data.login}} </a></li>
+                <li><img src={{user.data.avatar_url}}></li>
+                <li>Followers: {{user.data.followers}}</li>
+                <li>Location: {{user.data.location}}</li>
+                <li>User repositories: {{user.data.public_repos}}</li>
+              </ul>
             </li>
           </ul> 
-          {{listC.followersData}}
     </section>
     
  </main>
@@ -68,6 +68,7 @@
  <script src="components/version/version-directive.js"></script>
  <script src="components/version/interpolate-filter.js"></script>
  <script src='controllers.js'></script>
+ <script src='factories.js'></script>
  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </body>
 </html>
