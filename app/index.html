@@ -12,29 +12,40 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
-  
+
 </head>
 <body ng-controller='ListController as listC'>
-  <main>
-    
-    <section id='search_box'>
-       <input id='search' ng-model='query'></input>
-    </section>
-    
-    <section id='user-list'>
-        <h1>Makers Academy Members</h1>
-          <ul id='list'>
-            <li ng-repeat='user in listC.members.data | filter: query'>
-              <img id={{user.id}} src={{user.avatar_url}}>
-              <a href={{user.html_url}}> Username: {{user.login}} </a>
-              <p class="repo">Repos:<span class="repoNumber">{{user.repos_url.length}}</span></p>
-              <a href={{user.html_url}}> Username:{{user.login}} </a> Followers: {{user.followers_url.length}}
-            </li>
-          </ul> 
-    </section>
-    
- </main>
-  
+  <div class="wrapper">
+    <header class="header">
+      <h1>Makers Academy Members</h1>
+      <section id='search_box'>
+         <input id='search' ng-model='query'></input>
+      </section>
+    </header>
+  <main class="main">
+      <section id='user-list'>
+            <div id='list'>
+              <div class="main" ng-repeat='user in listC.members.data | filter: query'>
+                <section class="userCard column-wrapper">
+                  <section class="column">
+                    <img id={{user.id}} src={{user.avatar_url}}>
+                    <h1><a href={{user.html_url}}>{{user.login}} </a></h1>
+                  </section>
+                  <section class="column">
+                    <ul>
+                      <li><p class="repo">Repos:<span class="repoNumber">{{user.repos_url.length}}</span></p></li>
+                      <li>Followers:{{user.followers_url.length}}</li>
+                    </ul>
+                  </section>
+              </section>
+            </div>
+          </div>
+        </section>
+    </main>
+    <aside class="aside-1"></aside>
+    <aside class="aside-2"></aside>
+    <footer class="footer"></footer>
+  </div>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
