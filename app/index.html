@@ -17,7 +17,7 @@
 <body ng-controller='ListController as listC' class="wrapper">
 
   <header class="header">
-    
+    <h1>Maker's Members</h1>
     <section id='search_box'>
       <label> Search:</label>
       <input id='search' placeholder='Name, Github username, location...' ng-model='query' autofocus></input>
@@ -38,7 +38,7 @@
                 <li>Location: {{user.data.location}}</li>
                 <li>Following: {{user.data.following}}</li>
                 <li>Followers: {{user.data.followers}}</li>
-                <li>Repositories: {{user.data.public_repos}}</li>
+                <li>Repositories: <span class="repoNumber">{{user.data.public_repos}}</span></li>
                 <li></li>
               </ul>
             </li>

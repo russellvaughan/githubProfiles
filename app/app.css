@@ -20,6 +20,7 @@ body {
 
 @media all and (min-width: 800px) {
   body { font-size: xx-large; }
+  section#search_box input { font-size: medium; }
   .aside-1, .aside-2 { width: 20%;}
   .main { flex: 2 0px; }
   .aside-1 { order: 1; }
@@ -68,6 +69,7 @@ ul {
 
 .header {
   min-height: 50px;
+  text-align: center;
 }
 
 section#search_box {
@@ -77,8 +79,12 @@ section#search_box {
 }
 
 section#search_box input {
-    width: 48%;
+    width: 45%;
     text-align: right;
+    font-size: small;
+    line-height: 2em;
+    vertical-align: middle;
+    margin: auto;
 }
 
 .aside-1, .aside-2 { 
