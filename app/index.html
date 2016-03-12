@@ -19,26 +19,26 @@
   <header class="header">
     
     <section id='search_box'>
-      <label> Search : </label>
-      <input id='search' placeholder='search for Makers by Github username' ng-model='query' autofocus></input>
+      <label> Search:</label>
+      <input id='search' placeholder='Name, Github username, location...' ng-model='query' autofocus></input>
     </section>
 
   </header>
   <main class="main">
-    <section id='user-list' class="userCard column-wrapper">
-            <section class="column">
-              <img id={{user.id}} src={{user.avatar_url}}>
-              <h1><a href={{user.html_url}}>{{user.data.name}} </a></h1>
+    <section id='user-list' ng-repeat='user in listC.userData | filter:query ' class="userCard column-wrapper">
+            <section class="column column-1">
+              <img id={{user.data.id}} src={{user.data.avatar_url}}>
+              <h3>{{user.data.name}}</h3>
             </section>
-            <section class="column">
+            <section class="column column-2">
           <ul id='list'>
-            <li ng-repeat='user in listC.userData | filter:query '>
+            <li>
               <ul>
-                <li><a href={{user.data.html_url}}> Username: {{user.data.login}} </a></li>
-                <li><img src={{user.data.avatar_url}}></li>
-                <li>Followers: {{user.data.followers}}</li>
+                <li>Username: <a href={{user.data.html_url}}>{{user.data.login}}</a></li>
                 <li>Location: {{user.data.location}}</li>
-                <li>User repositories: {{user.data.public_repos}}</li>
+                <li>Following: {{user.data.following}}</li>
+                <li>Followers: {{user.data.followers}}</li>
+                <li>Repositories: {{user.data.public_repos}}</li>
                 <li></li>
               </ul>
             </li>

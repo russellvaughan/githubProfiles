@@ -1,62 +1,8 @@
 /* app css stylesheet */
-/*
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+
+body {
+  font-family: 'Courier', serif;
 }
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
-
-<<<<<<< HEAD
-=======
-li {
-  background-color: lightgray;
-  width: 500px;
-}
-
-li img {
-  height:inherit;
-}
-
-.userCard {
-    width: 50%;
-    margin: auto;
-    margin-bottom: 5%;
-    padding: 5%;
-}
-img {
-    width: 50%;
-
-
-
-
-
-.userCard {
-  background-color: #F7F9A2;
-}
-*/
 
 .wrapper {
   display: flex;
@@ -69,9 +15,12 @@ img {
 
 @media all and (min-width: 600px) {
   .aside { flex: 1 auto; }
+  body { font-size: x-large; }
 }
 
 @media all and (min-width: 800px) {
+  body { font-size: xx-large; }
+  .aside-1, .aside-2 { width: 20%;}
   .main { flex: 2 0px; }
   .aside-1 { order: 1; }
   .main    { order: 2; }
@@ -79,32 +28,59 @@ img {
   .footer  { order: 4; }
 }
 
-.aside-1, .aside-2 {
-  min-width: 15%;
-}
-
 .column {
-  width: 50%;
-  background-color: pink;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-
-}
-
-.column-wrapper {
-  display: flex;
-  flex-flow: nowrap;
-  background-color: blue;
+  border-radius: inherit;
+  padding-top: 2%;
 }
 
 .column img {
-  width: 75%;
+    width: 50%;
+    border-radius: inherit;
+}
+
+.column-1 {
+    width: 35%;
+    text-align: center;
+}
+
+.column-2 {
+    width:50%;
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+    -webkit-padding-start: 10px;
 }
 
 .userCard {
-  border-radius: 3%;
-  overflow: hidden;
-  background-color: green;
-  padding: 5%;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: green;
+}
+
+.column-wrapper {
+    display: flex;
+    flex-flow: nowrap;
+    background-color: lightgrey;
+    margin: 2%;
+}
+
+.header {
+  min-height: 50px;
+}
+
+section#search_box {
+    padding-top: 15px;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+section#search_box input {
+    width: 48%;
+    text-align: right;
+}
+
+.aside-1, .aside-2 { 
+  min-width: 15px;
 }
