@@ -6,24 +6,31 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Maker's Students</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
-  
+
 </head>
-<body ng-controller='ListController as listC'>
-  <main>
+<body ng-controller='ListController as listC' class="wrapper">
+
+  <header class="header">
     
     <section id='search_box'>
       <label> Search : </label>
-      <input id='search' placeholder='search for makers' ng-model='query' autofocus></input>
+      <input id='search' placeholder='search for Makers by Github username' ng-model='query' autofocus></input>
     </section>
-      
-    <section id='user-list'>
-        <h1>Makers Academy Members</h1>
+
+  </header>
+  <main class="main">
+    <section id='user-list' class="userCard column-wrapper">
+            <section class="column">
+              <img id={{user.id}} src={{user.avatar_url}}>
+              <h1><a href={{user.html_url}}>{{user.data.name}} </a></h1>
+            </section>
+            <section class="column">
           <ul id='list'>
             <li ng-repeat='user in listC.userData | filter:query '>
               <ul>
@@ -32,13 +39,16 @@
                 <li>Followers: {{user.data.followers}}</li>
                 <li>Location: {{user.data.location}}</li>
                 <li>User repositories: {{user.data.public_repos}}</li>
+                <li></li>
               </ul>
             </li>
           </ul> 
+          </section>
     </section>
-    
- </main>
-  
+  </main>
+  <aside class="aside-1"></aside>
+  <aside class="aside-2"></aside>
+  <footer class="footer"></footer>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
