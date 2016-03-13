@@ -1,12 +1,32 @@
 /* app css stylesheet */
 
+*:focus {
+  outline: none;
+}
+
 body {
   font-family: 'Courier', serif;
+  font-family: 'Slabo 27px', serif;
 }
 
 header {
   min-height: 50px;
   width:100%;
+  position:fixed;
+  background: rgba(204,243,255,1);
+  background: -moz-linear-gradient(top, rgba(204,243,255,1) 0%, rgba(255,255,255,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(204,243,255,1)), color-stop(100%, rgba(255,255,255,1)));
+  background: -webkit-linear-gradient(top, rgba(204,243,255,1) 0%, rgba(255,255,255,1) 100%);
+  background: -o-linear-gradient(top, rgba(204,243,255,1) 0%, rgba(255,255,255,1) 100%);
+  background: -ms-linear-gradient(top, rgba(204,243,255,1) 0%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom, rgba(204,243,255,1) 0%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccf3ff', endColorstr='#ffffff', GradientType=0 );
+  padding-bottom: 30px;
+  z-index: 1;
+}
+
+.spacer {
+  padding-top: 40%;
 }
 
 ul {
@@ -55,7 +75,27 @@ ul {
 .site-search__field {
     line-height: 2em;
     vertical-align: middle;
-    min-width: 300px
+    min-width: 300px;
+    border-radius: 8px;
+    border: 1px solid white;
+
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.26);
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.26);
+
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.site-search__field:hover {
+  -moz-transform: scale(1.035);
+  -webkit-transform: scale(1.035);
+  -o-transform: scale(1.035);
+  -ms-transform: scale(1.035);
+  transform: scale(1.035);
 }
 
 .text--centered {
@@ -72,10 +112,43 @@ ul {
 
 .user-card {
     border-radius: 16px;
-    background-color: lightgrey;
     margin: 2%;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(204,243,255,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ccf3ff', GradientType=0 );
+
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.26);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.26);
+
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
+.user-card:hover {
+  background: rgba(255,255,255,0.5);
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(204,243,255,0.5) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.5)), color-stop(100%, rgba(204,243,255,0.5)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(204,243,255,0.5) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(204,243,255,0.5) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(204,243,255,0.5) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, rgba(204,243,255,0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ccf3ff', GradientType=0 );
+
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
 .user-card__column--one-third {
     width: 33%;
     padding: 20px 10px 0px 15px;
@@ -88,4 +161,37 @@ ul {
 .user-card__img {
     width: 50%;
     border-radius: 16px;
+}
+
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  max-height: 100px;
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(204,243,255,1)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(204,243,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ccf3ff', GradientType=0 );
+}
+
+footer h6 {
+  padding: 0;
+  line-height: 0em;
+}
+
+h2 {
+  font-family: 'Shadows Into Light', cursive;
+  line-height: 0.25em;
+}
+
+h1 {
+  font-family: 'Slabo 27px', serif;
+  line-height: 0.5em;
 }
