@@ -1,19 +1,17 @@
 describe("ListController", function() {
-  var ctrl, httpBackend, response;
+  var ctrl, httpBackend, response, userListFactory;
   
   beforeEach(function() {
     module("myApp");
-    inject(function($controller, $httpBackend) {
-      ctrl = $controller("ListController");
-      httpBackend = $httpBackend;
-      response = { "data" : "FromRequest"}
-      httpBackend.when("GET", "https://api.github.com/orgs/makersacademy/members").respond(response);
+    
+    inject(function($controller, $httpBackend, UserListFactory) {
+      ctrl = $controller("ListController")      
+      userListFactory = spyOn(UserListFactory, 'getList')
     });
   });
   
-  it('Returns data from a GET request to github.api', function() {
-    httpBackend.flush();
-    expect(ctrl.members.data).toEqual(response);
+  it('Calls #getList on UserListFactory to GET request to github.api', function() {
+    expect(userListFactory).toHaveBeenCalled;
   })
   
 });

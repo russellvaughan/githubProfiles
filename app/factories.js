@@ -18,6 +18,5 @@ myApp.factory('UserListFactory', function($http){
          return this.userArray;
         })  
      }
-  
   return userList;
 });
