@@ -9,14 +9,15 @@ module.exports = function(config){
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/components/**/*.js',
       'tests/unit-tests/*.js',
-      'app/app.js',
-      'app/controllers.js',
+      'app/*.js',
       'app/view*/**/*.js'
     ],
 
     autoWatch : true,
 
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 
+                 'jasmine-matchers'
+    ],
 
     browsers : ['Chrome'],
 
@@ -24,6 +25,7 @@ module.exports = function(config){
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
+            'karma-jasmine-matchers',
             'karma-junit-reporter'
             ],
 

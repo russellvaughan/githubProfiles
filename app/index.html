@@ -28,10 +28,10 @@
             <li ng-repeat='user in listC.userData | filter:query '>
               <ul>
                 <li><a href={{user.data.html_url}}> Username: {{user.data.login}} </a></li>
-                <li><img src={{user.data.avatar_url}}></li>
+                <li><img id={{user.data.id}} src={{user.data.avatar_url}}></li>
                 <li>Followers: {{user.data.followers}}</li>
                 <li>Location: {{user.data.location}}</li>
-                <li>User repositories: {{user.data.public_repos}}</li>
+                <li id='repos'>User repositories: {{user.data.public_repos}}</li>
               </ul>
             </li>
           </ul> 
