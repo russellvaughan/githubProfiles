@@ -9,3 +9,9 @@ var myApp = angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/index.html'});
 }]);
+
+
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname + '/app'));
+app.listen(process.env.PORT || 3000);
