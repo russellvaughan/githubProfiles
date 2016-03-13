@@ -42,12 +42,10 @@ describe('my app', function() {
   it('should return the number of repos for a user', function() {
     browser.get('index.html');
     element(by.model('query')).sendKeys('Adrian')
-    var repos = $('p.repo');
-    var repoNumber = $('span.repoNumber')
-    expect(repos.getText()).toContain("Repos:");
-    expect(repoNumber.getText()).toBeGreaterThan(-1);
-    });  
-  });
+    var repos = $('ul#list');
+    expect(repos.getText()).toContain("Repositories:");
+    expect(repos.getText()).toBeGreaterThan(-1);
+  });  
   
   it('should display the number of followers the user has', function() {
     browser.get('index.html');
