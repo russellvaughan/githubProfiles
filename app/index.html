@@ -6,39 +6,47 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Maker's Students</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
-  
+
 </head>
-<body ng-controller='ListController as listC'>
-  <main>
-    
-    <section id='search_box'>
-      <label> Search : </label>
-      <input id='search' placeholder='search for makers' ng-model='query' autofocus></input>
-    </section>
-      
-    <section id='user-list'>
-        <h1>Makers Academy Members</h1>
-          <ul id='list'>
-            <li ng-repeat='user in listC.userData | filter:query '>
+<body ng-controller='ListController as listC' class="flexbox--row-wrap medium-screen__font--x-large large-screen__font--xx-large">
+
+  <header class="text--centered">
+    <h1>Maker's Members</h1>
+    <form class='site-search'>
+      <label> Search:</label>
+      <input class="site-search__field text--right medium-screen__font--medium medium-screen__width--small large-screen__font--large" placeholder='Name, username, location...' ng-model='query' autofocus></input>
+    </form>
+
+  </header>
+  <main class="flexbox__child--full-width flexbox__child--order-two large-screen__margin--medium x-large-screen__margin--quarter large-screen__flex--two">
+    <section id='user-list' ng-repeat='user in listC.userData | filter:query ' class="user-card flexbox--nowrap">
+            <section class="flexbox__child--full-width user-card__column--one-third text--centered">
+              <img class="user-card__img" id={{user.data.id}} src={{user.data.avatar_url}}>
+              <h3>{{user.data.name}}</h3>
+            </section>
+            <section class="flexbox__child--full-width user-card__column--half">
+          <ul>
+            <li>
               <ul>
-                <li><a href={{user.data.html_url}}> Username: {{user.data.login}} </a></li>
-                <li><img id={{user.data.id}} src={{user.data.avatar_url}}></li>
-                <li>Followers: {{user.data.followers}}</li>
+                <li>Username: <a href={{user.data.html_url}}>{{user.data.login}}</a></li>
                 <li>Location: {{user.data.location}}</li>
-                <li id='repos'>User repositories: {{user.data.public_repos}}</li>
+                <li>Following: {{user.data.following}}</li>
+                <li>Followers: {{user.data.followers}}</li>
+                <li>Repositories: <span class="repoNumber">{{user.data.public_repos}}</span></li>
+                <li></li>
               </ul>
             </li>
-          </ul> 
+          </ul>
+          </section>
     </section>
-    
- </main>
-  
+  </main>
+ <footer class="flexbox__child--full-width flexbox__child--order-four text--centered"><h6> Barry, Russell, Kait, & Marco - Makers Academy Ronin January 2016</h6></footer>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
