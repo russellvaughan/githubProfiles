@@ -43,8 +43,7 @@ describe('my app', function() {
     browser.get('index.html');
     element(by.model('query')).sendKeys('Adrian')
     var repos = $('ul#list');
-    expect(repos.getText()).toContain("Repositories:");
-    expect(repos.getText()).toBeGreaterThan(-1);
+    expect(repos.getText()).toMatch(/repositories: \d+/);
   });  
   
   it('should display the number of followers the user has', function() {
