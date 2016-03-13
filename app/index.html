@@ -14,24 +14,24 @@
   <link rel="stylesheet" href="app.css">
 
 </head>
-<body ng-controller='ListController as listC' class="wrapper">
+<body ng-controller='ListController as listC' class="flexbox--row-wrap medium-screen__font--x-large large-screen__font--xx-large">
 
-  <header class="header">
+  <header class="text--centered">
     <h1>Maker's Members</h1>
-    <section id='search_box'>
+    <form class='site-search'>
       <label> Search:</label>
-      <input id='search' placeholder='Name, Github username, location...' ng-model='query' autofocus></input>
-    </section>
+      <input class="site-search__field text--right medium-screen__font--medium medium-screen__width--small large-screen__font--large" placeholder='Name, username, location...' ng-model='query' autofocus></input>
+    </form>
 
   </header>
-  <main class="main">
-    <section id='user-list' ng-repeat='user in listC.userData | filter:query ' class="userCard column-wrapper">
-            <section class="column column-1">
-              <img id={{user.data.id}} src={{user.data.avatar_url}}>
+  <main class="flexbox__child--full-width flexbox__child--order-two large-screen__margin--medium x-large-screen__margin--quarter large-screen__flex--two">
+    <section id='user-list' ng-repeat='user in listC.userData | filter:query ' class="user-card flexbox--nowrap">
+            <section class="flexbox__child--full-width user-card__column--one-third text--centered">
+              <img class="user-card__img" id={{user.data.id}} src={{user.data.avatar_url}}>
               <h3>{{user.data.name}}</h3>
             </section>
-            <section class="column column-2">
-          <ul id='list'>
+            <section class="flexbox__child--full-width user-card__column--half">
+          <ul>
             <li>
               <ul>
                 <li>Username: <a href={{user.data.html_url}}>{{user.data.login}}</a></li>
@@ -46,9 +46,7 @@
           </section>
     </section>
   </main>
-  <aside class="aside-1"></aside>
-  <aside class="aside-2"></aside>
-  <footer class="footer"></footer>
+ <footer class="flexbox__child--full-width flexbox__child--order-four text--centered"><h6> Barry, Russell, Kait, & Marco - Makers Academy Ronin January 2016</h6></footer>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
