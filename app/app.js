@@ -9,3 +9,4 @@ var myApp = angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/index.html'});
 }]);
+

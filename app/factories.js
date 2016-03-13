@@ -3,7 +3,7 @@ myApp.factory('UserListFactory', function($http){
   
   userList.getList = function() {
      
-    return $http.get('https://api.github.com/orgs/makersacademy/members').then(function(response) {
+    return $http.get('https://api.github.com/orgs/makersacademy/members',{headers:{Authorization:'token a9bb2fa82517f2e32c48dce8b36c8456952883fc'}}).then(function(response) {
        this.members = response.data;
        this.users = []
        this.userArray = []
