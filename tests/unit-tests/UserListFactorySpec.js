@@ -1,5 +1,5 @@
 describe('UserListFactory', function() {
-  var factory, httpBackend, eggs;
+  var factory, httpBackend;
   
   beforeEach(function() {
     module('myApp');
