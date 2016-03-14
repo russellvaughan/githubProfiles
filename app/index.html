@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="app.css">
   <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+  <script src="bower_components/angular/angular.js"></script>
 </head>
 <body ng-controller='ListController as listC' class="flexbox--row-wrap medium-screen__font--x-large large-screen__font--xx-large">
 
@@ -29,8 +30,9 @@
   <main class="flexbox__child--full-width flexbox__child--order-two large-screen__margin--medium x-large-screen__margin--quarter large-screen__flex--two">
     <section class="spacer"><section>
     <section ng-show="query" id='user-list' ng-repeat='user in listC.userData | filter:query ' class="user-card flexbox--nowrap">
+    <section id='user-list' ng-repeat='user in listC.userData | filter:query ' class="user-card flexbox--nowrap" ng-cloak>
             <section class="flexbox__child--full-width user-card__column--one-third text--centered">
-              <img class="user-card__img" id={{user.data.id}} src={{user.data.avatar_url}}>
+              <img class="user-card__img" id={{user.data.id}} ng-src={{user.data.avatar_url}}>
               <h3>{{user.data.name}}</h3>
             </section>
             <section class="flexbox__child--full-width user-card__column--half">
@@ -50,17 +52,6 @@
     </section>
   </main>
  <footer class="flexbox__child--full-width flexbox__child--order-four text--centered"><h6>Kait, Marco, Barry & Russell - Makers Academy Ronin January 2016</h6></footer>
-
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-
-  <div ng-view></div>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
- <script src="bower_components/angular/angular.js"></script>
  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
  <script src="bower_components/angular-route/angular-route.js"></script>
  <script src="app.js"></script>
