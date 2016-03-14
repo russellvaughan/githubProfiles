@@ -70,3 +70,4 @@ Throughout the development of the GitHub Profile Viewer both unit tests and end-
 * Marco Bagnasco
 * Barry Grubb
 * Russell Vaughan
+ 
