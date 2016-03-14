@@ -9,7 +9,7 @@ This project was created for the [Maker's Academy](http://www.makersacademy.com/
 
 ## Instructions
 
-In order to use the Github Profile Viewer on a local installation please follow the steps outlined below. Note that a local installation will require particular dependencies (described) in order to run. Alternatively the online version is hosted on Heroku and can be found [here](LINK_TO_HEROKU). The following instructions are based upon Mac OSX, and should operate similarly to Linux. Care must be taken however to adapt the instructions below if using a Windows operating system.
+In order to use the Github Profile Viewer on a local installation please follow the steps outlined below. Note that a local installation will require particular dependencies (described) in order to run. Alternatively the online version is hosted on Heroku and can be found [here](https://github-view-profiles.herokuapp.com/#/index.html). The following instructions are based upon Mac OSX, and should operate similarly to Linux. Care must be taken however to adapt the instructions below if using a Windows operating system.
 
 * Ensure that your machine has [Git](https://git-scm.com/) installed.
 
@@ -27,13 +27,13 @@ Starting up http-server, serving ./ on port: 8000
 Hit CTRL-C to stop the server
 ```
 
-* From within your web browser navigate to `localhost:8000/app`. You will be presented with the application page, which by default will list all GitHub profiles which belong to the Makers Academy organization.
+* From within your web browser navigate to `localhost:8000/app`. You will be presented with the application page.
 
-* Enter a search term in the search bar toward the top of the page. The search term can be based upon the required user's GitHub username, real name or location.
+* You can now search for members who belong to the Makers Academy GitHub organization. Enter a search term in the search bar toward the top of the page. The search term can be based upon the required user's GitHub username, real name or location.
 
-* The search results will filter the displayed GitHub profiles upon every keystroke, so it is possible that your intended search result may be reached before you have completed entering your search term.
+* The search results will update the displayed GitHub profiles upon every keystroke, so it is possible that your intended search result may be reached before you have completed entering your search term.
 
-* In order to cancel or amend the current search, simply edit the text displayed in the search bar. Deleting all text within the search bar will return the page to it's default state, displaying all GitHub user profiles which belong to the Makers Academy GitHub organization.
+* In order to cancel or amend the current search, simply edit the text displayed in the search bar. Deleting all text within the search bar will return the page to it's default state.
 
 * In order to stop the server from running, within the terminal enter `CTRL-C` (Hold down the 'ctrl' key and whilst it is held down enter the 'c' key).
 
