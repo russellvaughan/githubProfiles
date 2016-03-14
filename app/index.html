@@ -29,8 +29,7 @@
   </header>
   <main class="flexbox__child--full-width flexbox__child--order-two large-screen__margin--medium x-large-screen__margin--quarter large-screen__flex--two">
     <section class="spacer"><section>
-    <section ng-show="query" id='user-list' ng-repeat='user in listC.userData | filter:query ' class="user-card flexbox--nowrap">
-    <section id='user-list' ng-repeat='user in listC.userData | filter:query ' class="user-card flexbox--nowrap" ng-cloak>
+    <section ng-show="query" id='user-list' ng-repeat='user in listC.userData | filter:query ' class="user-card flexbox--nowrap" ng-cloak>
             <section class="flexbox__child--full-width user-card__column--one-third text--centered">
               <img class="user-card__img" id={{user.data.id}} ng-src={{user.data.avatar_url}}>
               <h3>{{user.data.name}}</h3>
@@ -52,6 +51,7 @@
     </section>
   </main>
  <footer class="flexbox__child--full-width flexbox__child--order-four text--centered"><h6>Kait, Marco, Barry & Russell - Makers Academy Ronin January 2016</h6></footer>
+ <div ng-view></div>
  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
  <script src="bower_components/angular-route/angular-route.js"></script>
  <script src="app.js"></script>
